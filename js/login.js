@@ -15,7 +15,15 @@ const email = emailField.value;
 // 3.c. get the value from the element
 const passwordField = document.getElementById('user-password');
 const password = passwordField.value;
-console.log(email, password);
+// console.log(email, password);
+
+// denger: do not verify email and password on the  clint side 
+// step-4: verify email and password
+if(email === 'sm@islamibank.com' && password === 'sm0003'){
+    console.log('valid user');
+}else{
+    console.log('invalid user');
+}
 
 
 

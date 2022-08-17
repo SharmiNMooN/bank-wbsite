@@ -40,7 +40,12 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
   const balanceTotalElement = document.getElementById("balance-total");
   const previousBalanceTotalString = balanceTotalElement.innerText;
   previousBalanceTotal = parseFloat(previousBalanceTotalString);
-  console.log(previousBalanceTotal);
+  //   console.log(previousBalanceTotal);
+
+  // step-6:
+  const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
+  balanceTotalElement.innerText = newBalanceTotal;
+
   //step-7: clear the input field
   withdrawField.value = "";
 });

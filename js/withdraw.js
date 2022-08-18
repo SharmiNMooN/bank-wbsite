@@ -24,8 +24,17 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
   const newWithdrawAmount = parseFloat(newWithDrawAmountString);
   //   console.log(newWithdrawAmount);
 
+  addToWithdrawAmount(newWithdrawAmount);
+
+  removeFromTotalBalance(newWithdrawAmount);
+
   // step-3:
 
+  //step-7: clear the input field
+  withdrawField.value = "";
+});
+
+function addToWithdrawAmount(withdrawAmount) {
   const withdrawTotalElement = document.getElementById("withdraw-total");
   const previousWithdrawTotalString = withdrawTotalElement.innerText;
   const previousWithdrawTotal = parseFloat(previousWithdrawTotalString);
@@ -33,19 +42,17 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
 
   //step-4:
 
-  const currentWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
+  const currentWithdrawTotal = previousWithdrawTotal + withdrawAmount;
   withdrawTotalElement.innerText = currentWithdrawTotal;
+}
 
-  //step-5:
+function removeFromTotalBalance(withdrawAmount) {
   const balanceTotalElement = document.getElementById("balance-total");
   const previousBalanceTotalString = balanceTotalElement.innerText;
   previousBalanceTotal = parseFloat(previousBalanceTotalString);
   //   console.log(previousBalanceTotal);
 
   // step-6:
-  const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
+  const newBalanceTotal = previousBalanceTotal - withdrawAmount;
   balanceTotalElement.innerText = newBalanceTotal;
-
-  //step-7: clear the input field
-  withdrawField.value = "";
-});
+}

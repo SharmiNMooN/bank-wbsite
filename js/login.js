@@ -24,6 +24,6 @@ document.getElementById("submit-btn").addEventListener("click", function () {
     window.location.href = "bank.html";
   } else {
     // console.log('invalid user');
-    alert("invalid user");
+    alert("invalid user: you are not a right user");
   }
 });
